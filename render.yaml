@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: resume-reviewer-ai
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: NVIDIA_API_KEY
+        sync: false
+      - key: NVIDIA_MODEL
+        value: nvidia/nemotron-3.5-lightning-30b-a3b
+      - key: NVIDIA_BASE_URL
+        value: https://integrate.api.nvidia.com/v1
